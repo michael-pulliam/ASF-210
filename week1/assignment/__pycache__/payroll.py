@@ -44,8 +44,8 @@ new_employee = Employee(
     input('Please enter Employee ID: '),
     input('Enter Employee First Name: '),
     input('Enter Employee Last Name: '),
-    input('Enter hours worked: '),
-    input('Enter hourly wage: ')
+    input('Enter hours worked: ')
+    
 )
 
 # new_employee.pay(input(f"Enter employee hours worked: "))
