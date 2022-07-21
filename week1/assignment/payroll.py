@@ -1,6 +1,10 @@
+# ------------------- ToDo --------------------------
+# Create HTML Form to receive Inputs 
+
 
 # from Employee import Employee
-
+import webbrowser
+import os
 from dataclasses import dataclass
 
 @dataclass
@@ -34,23 +38,59 @@ class Employee:
         if float(hours) <= 40:
             total_pay = float(int(hours) * int(self.hourly_wage))
             print(f" Here is your payout.. ${total_pay}")
+            return f" Here is your payout.. ${total_pay}"
 
         elif float(hours) > 40:
             overtime_pay = float((int(hours) - 40) * (int(self.hourly_wage) * 1.5)) + (40 * int(self.hourly_wage)) 
             print(f"Here is your payout, including overtime... ${overtime_pay:.2f}")
+            return f"Here is your payout, including overtime... ${overtime_pay:.2f}"
   
 
 new_employee = Employee(
     input('Please enter Employee ID: '),
     input('Enter Employee First Name: '),
     input('Enter Employee Last Name: '),
-    input('Enter hours worked: ')
+    input('Enter Hourly Wage: ')
     
 )
 
-# new_employee.pay(input(f"Enter employee hours worked: "))
+current_pay = new_employee.pay(input("Enter hours worked: "))
 
-new_employee.pay(input("Enter employee hourly rate: "))
+
+# to open/create a new html file in the write mode
+f = open('week1/assignment/index.html', 'w')
+  
+# the html code which will go in the file 
+html_template = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>Hello World</header>
+    <h1>{0}</h1>
+    <h1>{4}</h1>
+    <h1>{2}</h1>
+    <h1>{1}</h1>
+    <h1>{0}</h1>
+    <h1>{3}</h1>
+</body>
+</html>
+""".format(current_pay, "Hello", "to","the","World", )
+# writing the code into the file
+f.write(html_template)
+  
+# close the file
+f.close()
+
+print("test",os.getcwd())
+
+filename = 'file:///'+os.getcwd()+'/week1/assignment/' + 'index.html'
+webbrowser.open_new_tab(filename)
 
 # id_input = input("Please ener the Employee ID: ")
 # print(f"Your ID is: {id_input}")
