@@ -20,6 +20,8 @@ def factorialLoop(x):
         retVal *= i
     return retVal
 
+# Recursion
+
 def factorial(x):
     if x == 1:
         return 1
@@ -36,6 +38,8 @@ def countDown():
     for i in range(10,0,-1):
         print(i)
     print("Blast Off!!!!")
+
+# Recursion
 
 def blastOff(x):
     if x == 0:

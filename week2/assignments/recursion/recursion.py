@@ -6,7 +6,7 @@ def loop1():
         if (i % 2) == 1:
             odd_sum += i
     return odd_sum
-print(loop1())
+
 def loop2():
     # Sum the even numbers between 1 and 20
     i = 0
@@ -37,5 +37,19 @@ def loop2Rec(num, even_sum):
     else:
         return even_sum
 
+
+print(f"Sum of odds between 1 and 20 using 'for' loop = {loop1()}")
+print(f"Sum of odds between 1 and 20 using recursion = {loop1Rec(0, 0)}")
+print(f"Sum of evens between 1 and 20 using 'while' loop = {loop2()}")
+print(f"Sum of evens between 1 and 20 using recursion = {loop2Rec(0, 0)}")
+
+def loop(n):
+    if n > 0:
+        print(n)
+        return n
+    else:
+        print('done')
+        n + loop(n-1)
+loop(10)
 
 
