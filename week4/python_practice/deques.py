@@ -18,7 +18,7 @@ from collections import deque
 #                         A positive value rotates to the right
 #                         A negative value rotates to the left
 # reverse()             : Reverse the order of the deque
-
+#dq.extent(item)        : adds multiple items to the right
 
 #                 Deque
 #  <---- Left Side     Right Side ---->
