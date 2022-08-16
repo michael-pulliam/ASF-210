@@ -32,18 +32,21 @@ def merge(nlist,lefthalf,righthalf):
         k=k+1
     return nlist
 
-# Allow user to input list and target
-usr_lst = input('Provide an unordered list of numbers to sort: ')
-stringified_lst = usr_lst.strip('][').split(', ')
-parsed_lst = []
 
-# Parse list from user for search function
-def parse(list):
-    if len(list) > 0:
-        parsed_lst.append(int(list[0]))
-        list.pop(0)
-        return parse(list)
-    return
-parse(stringified_lst)
-mergeSort(parsed_lst)
+list = [ 55 ,  31 ,  26 ,  20 ,  63 ,  7 ,  51 ,  74 ,  81 ,  40 ]
+mergeSort(list)
+# # Allow user to input list and target
+# usr_lst = input('Provide an unordered list of numbers to sort: ')
+# stringified_lst = usr_lst.strip('][').split(', ')
+# parsed_lst = []
+
+# # Parse list from user for search function
+# def parse(list):
+#     if len(list) > 0:
+#         parsed_lst.append(int(list[0]))
+#         list.pop(0)
+#         return parse(list)
+#     return
+# parse(stringified_lst)
+# mergeSort(parsed_lst)
 
