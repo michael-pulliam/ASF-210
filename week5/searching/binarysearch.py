@@ -19,10 +19,10 @@ num_list = [7, 20, 26, 31, 40, 51, 55, 63, 74, 81]
 
     
 word_list = ["Alpha", "Beta", "Delta", "Epsilon", "Gamma", "Theta", "Zeta"]
-# start = time.time()
+start = time.time()
 print(binary_search(num_list, 31))
-# end = time.time()
-# print(f"Execution time: {end-start}")
+end = time.time()
+print(f"Execution time: {end-start}")
 print(binary_search(num_list, 77))
 print(binary_search(word_list, "Delta")) 
 
